@@ -16,9 +16,19 @@ var postsService = (function () {
         this.http = http;
         console.log('Post service initialized.....');
     }
-    postsService.prototype.getPosts = function () {
-        // return this.http.get('file:///C:/Users/prakash/Desktop/projectss/node/index.html');
+    postsService.prototype.getPosts1 = function () {
         return this.http.get('https://jsonplaceholder.typicode.com/posts')
+            .map(function (res) { return res.json(); });
+    };
+    postsService.prototype.getposts = function () {
+        return this.http.get('http://127.0.0.1:8000/meena')
+            .map(function (res) { return res; });
+    };
+    postsService.prototype.getAdd = function (data1, data2) {
+        console.log("test", data1, data2);
+    };
+    postsService.prototype.getPosts2 = function () {
+        return this.http.get('demo.json')
             .map(function (res) { return res.json(); });
     };
     postsService = __decorate([
