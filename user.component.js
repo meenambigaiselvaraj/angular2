@@ -23,9 +23,12 @@ var UserComponent = (function () {
         };
         this.hobbies = ['music', 'singing'];
         this.showHobbies = false;
-        this.postsService.getPosts().subscribe(function (posts) {
+        this.postsService.getPosts1().subscribe(function (posts) {
             _this.posts = posts;
-            console.log(posts);
+        });
+        this.postsService.getPosts2().subscribe(function (posts) {
+            //console.log(posts);
+            _this.posts123 = posts;
         });
     }
     UserComponent.prototype.show = function () {
@@ -35,6 +38,16 @@ var UserComponent = (function () {
         else {
             this.showHobbies = true;
         }
+    };
+    UserComponent.prototype.demoRequest = function () {
+        this.postsService.getposts().subscribe(function (response) {
+            console.log(response["_body"]);
+        });
+    };
+    UserComponent.prototype.add = function () {
+        //console.log(this.a);
+        //console.log(this.b);
+        this.postsService.getAdd(this.a, this.b);
     };
     UserComponent.prototype.addHobby = function (hobby) {
         this.hobbies.push(hobby);
