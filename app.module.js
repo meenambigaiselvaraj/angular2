@@ -14,13 +14,14 @@ var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
 var user_component_1 = require('./components/user.component');
+var about_components_1 = require('./components/about.components');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule],
-            declarations: [app_component_1.AppComponent, user_component_1.UserComponent],
+            declarations: [app_component_1.AppComponent, user_component_1.UserComponent, about_components_1.AboutComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
